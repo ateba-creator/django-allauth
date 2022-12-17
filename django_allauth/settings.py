@@ -58,8 +58,15 @@ ACCOUNT_EMAIL_REQUIRED = 'true'
 ACCOUNT_EMAIL_UNIQUE='true'
 ACCOUNT_EMAIL_VERIFICATION = 'madatory'
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.coer.mail.backends.dummy.EmailBackend'
+# if DEBUG:
+#     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "mobischo2022@gmail.com"
+EMAIL_HOST_PASSWORD = "rouylqlhdesrxgnx"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
